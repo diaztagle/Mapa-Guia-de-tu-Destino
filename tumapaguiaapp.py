@@ -79,7 +79,7 @@ CUSTOM_CSS = """
     
     h1, h2, h3, h4 {
         color: #D4AF37 !important;
-        font-family: 'Georgia', serif;
+        font-family: 'Roboto', condensed;
         text-shadow: 0 2px 4px rgba(0,0,0,0.3);
     }
     
@@ -357,15 +357,15 @@ def main():
         <div class="info-card">
         <h3 style="text-align: center;">💎 Precios</h3>
         <p style="text-align: center;"><span class="badge">Básico: GRATIS</span></p>
-        <p style="text-align: center;"><span class="badge">Premium: $20k-$60k</span></p>
-        <p style="text-align: center; font-size: 0.85rem;">Donación consciente</p>
+        <p style="text-align: center;"><span class="badge">Premium: $20.000-$60.000</span></p>
+        <p style="text-align: center; font-size: 0.85rem;">Tú eliges el monto de la donación</p>
         </div>
         """, unsafe_allow_html=True)
     
     # PÁGINAS
     if pagina == "Inicio":
         st.markdown('<h1>🔮 Mapa Guía de tu Destino 🔮</h1>', unsafe_allow_html=True)
-        st.markdown('<p style="text-align: center; font-size: 1.3rem; color: #F4E4C1;">Descubre tu camino a través de la Quirología y los Ciclos Vitales</p>', unsafe_allow_html=True)
+        st.markdown('<p style="text-align: center; font-size: 1.3rem; color: #F4E4C1;">Descubre tu camino a través de la Quirología y los Ciclos de la Vida</p>', unsafe_allow_html=True)
         st.markdown('<div class="gold-divider"></div>', unsafe_allow_html=True)
         
         col1, col2, col3 = st.columns(3)
@@ -374,7 +374,7 @@ def main():
             st.markdown("""
             <div class="info-card">
             <h3 style="text-align: center;">✨ Autoconocimiento</h3>
-            <p style="text-align: center;">Descubre tu potencial a través del análisis</p>
+            <p style="text-align: center;">Descubre tu potencial a través del análisis de tu real personalidad</p>
             </div>
             """, unsafe_allow_html=True)
         
@@ -390,7 +390,7 @@ def main():
             st.markdown("""
             <div class="info-card">
             <h3 style="text-align: center;">💎 Accesible</h3>
-            <p style="text-align: center;">Precios sociales para todos</p>
+            <p style="text-align: center;">Tu aporte o donación que elijas para consulta Premium</p>
             </div>
             """, unsafe_allow_html=True)
         
@@ -417,7 +417,7 @@ def main():
             <div class="price-card">
             <h3>⭐ Análisis Premium</h3>
             <div class="price-amount">$20.000 - $60.000</div>
-            <p style="color: #F4E4C1;">COP (Tú eliges el monto de la donacióne)</p>
+            <p style="color: #F4E4C1;">COP (Tú eliges el monto de la donación)</p>
             <ul style="text-align: left;">
             <li>✓ Análisis quirológico completo</li>
             <li>✓ Interpretación personalizada</li>
@@ -456,7 +456,16 @@ def main():
     elif pagina == "Consulta Gratis":
         st.markdown('<h1>🆓 Análisis Básico Gratuito</h1>', unsafe_allow_html=True)
         st.markdown('<div class="gold-divider"></div>', unsafe_allow_html=True)
+
+        st.markdown('<div class="info-card">', unsafe_allow_html=True)
         
+        with st.form("consulta_Gratis"):
+            pregunta = st.text_area(
+                "💭 ¿Qué aspecto deseas explorar?",
+                placeholder="Ejemplo: Orientación profesional...",
+                height=150
+            )
+            
         col1, col2, col3 = st.columns([1, 2, 1])
         
         with col2:
@@ -506,14 +515,18 @@ def main():
             
             st.markdown("### 📸 Fotos de tus Manos")
             foto1 = st.file_uploader("🖐️ Palma derecha", type=['jpg', 'png'])
+            foto2 = st.file_uploader("🖐️ Palma izquierda", type=['jpg', 'png'])
+            foto3 = st.file_uploader("🖐️ Dorso derecho", type=['jpg', 'png'])
+            foto4 = st.file_uploader("🖐️ Puño - percusion derecha", type=['jpg', 'png'])
             
             submitted = st.form_submit_button("✨ Enviar Consulta", use_container_width=True)
             
             if submitted and pregunta and foto1:
                 st.success("✅ Consulta recibida. Te contactaremos en 24-48 horas.")
-                st.balloons()
+                st.stars()
         
         st.markdown('</div>', unsafe_allow_html=True)
 
 if __name__ == "__main__":
     main()
+
