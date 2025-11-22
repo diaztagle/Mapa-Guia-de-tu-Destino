@@ -64,8 +64,8 @@ st.set_page_config(
 # Configuración de precios
 PRECIOS = {
     'consulta_basica': 0,  # Gratis
-    'consulta_premium': 15000,  # COP (aprox $3-4 USD)
-    'suscripcion_mensual': 20000  # COP (aprox $5 USD)
+    'consulta_premium': 20000, # COP, 60000,  # COP (aprox $5-15 USD)
+    'suscripcion_mensual': 80000  # COP (aprox $20 USD)
 }
 
 # ============================================================================
@@ -831,4 +831,5 @@ def main():
         """)
 
 if __name__ == "__main__":
+
     main()
