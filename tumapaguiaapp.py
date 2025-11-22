@@ -684,8 +684,8 @@ def main():
             
             **Servicios:**
             - 🆓 Análisis básico de ciclos (Gratis)
-            - ⭐ Análisis premium con quirología ($15.000 COP)
-            - 💎 Suscripción mensual ($20.000 COP)
+            - ⭐ Análisis premium con quirología ($20.000 - $60.000 COP  Eliges el monto de la donación)
+            - 💎 Suscripción mensual ($80.000 COP)
             
             **Métodos de pago:**
             - 💙 Mercado Pago (Tarjetas, PSE, cuotas)
@@ -833,3 +833,4 @@ def main():
 if __name__ == "__main__":
 
     main()
+
