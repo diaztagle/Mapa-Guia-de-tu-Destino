@@ -313,8 +313,8 @@ st.markdown(CUSTOM_CSS, unsafe_allow_html=True)
 # Configuración de precios
 PRECIOS = {
     'consulta_basica': 0,
-    'consulta_premium': 15000,
-    'suscripcion_mensual': 20000
+    'consulta_premium': 20000 - 60000 - Tú eliges el monto de la donación,
+    'suscripcion_mensual': 80000
 }
 
 # ============================================================================
@@ -1148,3 +1148,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
